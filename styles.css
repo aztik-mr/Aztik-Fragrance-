@@ -1,0 +1,25 @@
+<!-- Ajout des nouveaux produits dans la section produits -->
+<!-- Produit 4 : Sauvage -->
+<article class="card">
+  <img src="https://images.unsplash.com/photo-1590080877923-1f3a7e08d34f?q=80&w=1200&auto=format&fit=crop" alt="Sauvage" />
+  <div class="card-body">
+    <div class="title">Sauvage</div>
+    <div class="muted">Frais • Épicé • Masculin</div>
+    <div class="divider"></div>
+    <div class="price">399 DH</div>
+    <button class="btn" onclick="selectProduct('Sauvage', '399')">Commander</button>
+  </div>
+</article>
+
+<!-- Produit 5 : Blue Chanel -->
+<article class="card">
+  <img src="https://images.unsplash.com/photo-1590080862347-9f6a7a0d2b1c?q=80&w=1200&auto=format&fit=crop" alt="Blue Chanel" />
+  <div class="card-body">
+    <div class="title">Blue Chanel</div>
+    <div class="muted">Boisé • Frais • Élégant</div>
+    <div class="divider"></div>
+    <div class="price">450 DH</div>
+    <button class="btn" onclick="selectProduct('Blue Chanel', '450')">Commander</button>
+  </div>
+</article>
+

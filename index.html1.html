@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AZTIK FRAGRANCE | Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e0e0f; /* noir profond */
+      --card:#151517;
+      --gold:#d4af37;
+      --muted:#a7a7a9;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#f6f6f7;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(14,14,15,.7);backdrop-filter:blur(8px);border-bottom:1px solid #222}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+    .brand .name{font-family:"Playfair Display",serif;font-size:22px;letter-spacing:1.5px;color:var(--gold)}
+    .cta-whatsapp{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#111;padding:10px 14px;border-radius:999px;font-weight:600}
+
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.45)}
+    .hero-inner{padding:80px 0 90px}
+    .kicker{color:var(--muted);letter-spacing:3px;text-transform:uppercase;font-size:12px}
+    h1{font-family:"Playfair Display",serif;font-size:48px;margin:10px 0 10px;line-height:1.1;color:#fff}
+    .sub{color:#d9d9db;max-width:650px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .badge{border:1px solid rgba(212,175,55,.5);color:var(--gold);padding:6px 10px;border-radius:999px;font-size:12px}
+
+    /* Grid produits */
+    .section{padding:48px 0}
+    .section h2{font-family:"Playfair Display",serif;margin:0 0 18px;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:620px){h1{font-size:36px}.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg,#191a1d, #121214);border:1px solid #242428;border-radius:18px;overflow:hidden}
+    .card img{width:100%;height:300px;object-fit:cover}
+    .card-body{padding:14px}
+    .title{font-weight:600}
+    .price{color:var(--gold);font-weight:700}
+    .btn{width:100%;border:1px solid var(--gold);color:#000;background:var(--gold);padding:10px 12px;border-radius:12px;font-weight:700;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+
+    /* Form */
+    form{background:linear-gradient(180deg,#141416,#101012);border:1px solid #242428;border-radius:18px;padding:18px}
+    label{display:block;font-size:13px;color:#d7d7da;margin-bottom:6px}
+    input,textarea,select{width:100%;background:#0f0f10;color:#fff;border:1px solid #2a2a30;border-radius:12px;padding:12px 14px;margin-bottom:12px}
+    textarea{min-height:80px}
+
+    /* Footer */
+    footer{padding:26px 0;border-top:1px solid #222;color:#c7c7cb}
+    .credits{font-size:12px;color:#9c9ca1}
+
+    /* Gold divider */
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.7),transparent);margin:28px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Remplacez src par votre fichier logo (ex: assets/logo.png) -->
+        <img src="" alt="AZTIK FRAGRANCE Logo" onerror="this.style.display='none'"/>
+        <span class="name">AZTIK FRAGRANCE</span>
+      </div>
+      <a class="cta-whatsapp" id="waTop" href="#commande">Commander</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="kicker">AF — Signature olfactive</div>
+      <h1>Élégance. Longue tenue. Confiance.</h1>
+      <p class="sub">Découvrez la collection AZTIK FRAGRANCE : des notes raffinées, une projection équilibrée et une tenue remarquable. Paiement à la livraison partout au Maroc.</p>
+      <div class="badges">
+        <div class="badge">Paiement à la livraison</div>
+        <div class="badge">Livraison 24‑72h</div>
+        <div class="badge">Service WhatsApp</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="section" id="produits">
+      <h2>Nos parfums</h2>
+      <div class="grid">
+        <!-- Produit 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1592947943561-9c7403fb9da2?q=80&w=1200&auto=format&fit=crop" alt="Parfum 1" />
+          <div class="card-body">
+            <div class="title">AF Noir Intense</div>
+            <div class="muted">Ambre • Vanille • Musk</div>
+            <div class="divider"></div>
+            <div class="price">249 DH</div>
+            <button class="btn" onclick="selectProduct('AF Noir Intense', '249')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1547887537-6158d64c5d7a?q=80&w=1200&auto=format&fit=crop" alt="Parfum 2" />
+          <div class="card-body">
+            <div class="title">AF Gold Signature</div>
+            <div class="muted">Boisé • Épicé • Chaud</div>
+            <div class="divider"></div>
+            <div class="price">299 DH</div>
+            <button class="btn" onclick="selectProduct('AF Gold Signature', '299')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Parfum 3" />
+          <div class="card-body">
+            <div class="title">AF Fresh Breeze</div>
+            <div class="muted">Agrumes • Marin • Propre</div>
+            <div class="divider"></div>
+            <div class="price">229 DH</div>
+            <button class="btn" onclick="selectProduct('AF Fresh Breeze', '229')">Commander</button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="section" id="commande">
+      <h2>Commander maintenant</h2>
+      <form onsubmit="return submitOrder(event)">
+        <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+          <div>
+            <label>Nom complet</label>
+            <input required id="name" placeholder="Votre nom" />
+          </div>
+          <div>
+            <label>Téléphone</label>
+            <input required id="phone" placeholder="06 xx xx xx xx" />
+          </div>
+          <div>
+            <label>Ville</label>
+            <input required id="city" placeholder="Ex: Casablanca" />
+          </div>
+          <div>
+            <label>Adresse complète</label>
+            <input required id="address" placeholder="Rue, N°, Quartier" />
+          </div>
+          <div>
+            <label>Produit</label>
+            <input id="product" readonly placeholder="Sélectionnez depuis le catalogue" />
+          </div>
+          <div>
+            <label>Quantité</label>
+            <select id="qty">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div>
+            <label>Taille</label>
+            <select id="size">
+              <option value="50ml">50ml</option>
+              <option value="100ml" selected>100ml</option>
+            </select>
+          </div>
+          <div>
+            <label>Remarque (optionnelle)</label>
+            <input id="note" placeholder="Couleur, point de repère…" />
+          </div>
+        </div>
+        <button class="btn" style="margin-top:6px">Confirmer la commande (Paiement à la livraison)</button>
+        <div class="credits" style="margin-top:8px">En cliquant, votre commande nous sera envoyée sur WhatsApp. Nous vous contacterons pour confirmation.</div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>© <span id="year"></span> AZTIK FRAGRANCE — Tous droits réservés.</div>
+      <div class="credits">Site démo (images placeholders). Remplacez-les par vos propres visuels.</div>
+    </div>
+  </footer>
+
+  <script>
+    // 👉 Mettez ici votre numéro WhatsApp au format international sans + (ex: 2126XXXXXXXX)
+    const WHATSAPP_NUMBER = '212600000000'; // À REMPLACER
+
+    function selectProduct(name, price){
+      document.querySelector('#product').value = `${name} — ${price} DH`;
+      document.querySelector('#commande').scrollIntoView({behavior:'smooth'});
+    }
+
+    function submitOrder(e){
+      e.preventDefault();
+      const name = document.querySelector('#name').value.trim();
+      const phone = document.querySelector('#phone').value.trim();
+      const city = document.querySelector('#city').value.trim();
+      const address = document.querySelector('#address').value.trim();
+      const product = document.querySelector('#product').value.trim() || 'Non précisé';
+      const qty = document.querySelector('#qty').value;
+      const size = document.querySelector('#size').value;
+      const note = document.querySelector('#note').value.trim();
+
+      const message = `🛍️ Nouvelle commande AZTIK FRAGRANCE\n`+
+        `Nom: ${name}\n`+
+        `Téléphone: ${phone}\n`+
+        `Ville: ${city}\n`+
+        `Adresse: ${address}\n`+
+        `Produit: ${product}\n`+
+        `Taille: ${size}\n`+
+        `Quantité: ${qty}\n`+
+        (note?`Remarque: ${note}\n`:``)+
+        `Paiement: à la livraison`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+      return false;
+    }
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

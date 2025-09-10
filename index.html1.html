@@ -174,30 +174,6 @@
         </article>
        <!-- Produit 5 -->
         <article class="card">
-          <img src="https://i.postimg.cc/Z5MsmYdC/Captured-ecran2024-09-09191315.webp" 
-       alt="Le Male Elixer" 
-          <div class="card-body">
-            <div class="title">Le Male Elixir </div>
-            <div class="muted">Ambre • Vanille • Musk</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Le Male Elixir ', '230')">Commander</button>
-          </div>
-        </article>
-     <!-- Produit 6 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/TPb0XVx4/Captured-ecran2024-12-04205254.webp" 
-       alt="Scandal" 
-          <div class="card-body">
-            <div class="title">Scandal </div>
-            <div class="muted">Ambre • Vanille • Musk</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Scandal', '230')">Commander</button>
-          </div>
-        </article>
-       <!-- Produit 7 -->
-        <article class="card">
           <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png"
      alt="Light blue "
      style="max-width:100%;height:auto;">
@@ -209,7 +185,7 @@
             <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '2')">Commander</button>
           </div>
         </article>
-     <!-- Produit 8 -->
+     <!-- Produit 6 -->
         <article class="card">
           <img  src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="Jean Paul Gaultier – La Belle Le Parfum">
           <div class="card-body">
@@ -220,7 +196,7 @@
             <button class="btn" onclick="selectProduct('La Belle', '230')">Commander</button>
           </div>
         </article>
-     <!-- Produit 9 -->
+     <!-- Produit 7 -->
         <article class="card">
           <img src="https://i.postimg.cc/1XRWykCC/70978c82-1ac8-4c76-8554-a04e055208e1-3484eb69fdbf01fd0f1ccbe520801343.webp"
      alt="Valentino"
@@ -233,7 +209,7 @@
             <button class="btn" onclick="selectProduct('Valentino', '230')">Commander</button>
           </div>
         </article>
-         <!-- Produit 10 -->
+         <!-- Produit 8 -->
         <article class="card">
           <img src="https://i.postimg.cc/BQQWkJms/Prada-Paradoxe-Intense-Still-Bottle-1-1x1-RGB-3614273961707-1fa7a6e1-31ff-4e96-9ff4-8a60781f22db-600x.webp" alt="Prada Paradoxe Intense">
           <div class="card-body">
@@ -296,13 +272,12 @@
   <footer>
     <div class="container">
       © <span id="year"></span> AZTIK FRAGRANCE — Tous droits réservés.
-      <div class="credits"/div>
+      <div class="credits">Site démo (images placeholders). Remplacez-les par vos propres visuels.</div>
     </div>
   </footer>
 
- <script>
-    // 👉 Mettez ici votre numéro WhatsApp au format international sans + (ex: 2126XXXXXXXX)
-    const WHATSAPP_NUMBER = '212774070108'; // À REMPLACER
+  <script>
+    const WHATSAPP_NUMBER = '212774070108';
 
     function selectProduct(name, price){
       document.querySelector('#product').value = `${name} — ${price} DH`;
@@ -337,6 +312,18 @@
     }
 
     document.querySelector('#year').textContent = new Date().getFullYear();
+
+    // Animate cards on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {threshold:0.2});
+
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   </script>
 </body>
 </html>

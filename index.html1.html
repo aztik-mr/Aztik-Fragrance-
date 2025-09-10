@@ -9,67 +9,99 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0e0e0f; /* noir profond */
-      --card:#151517;
+      --bg-dark:#0d0d0f;
+      --card-dark:#1a1a1e;
       --gold:#d4af37;
       --muted:#a7a7a9;
+      --hover-glow: rgba(212,175,55,0.3);
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#f6f6f7;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{background:var(--bg-dark); color:#f6f6f7; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; line-height:1.5;}
+
     a{color:inherit;text-decoration:none}
+
     .container{max-width:1100px;margin:0 auto;padding:0 18px}
 
     /* Header */
-    header{position:sticky;top:0;z-index:50;background:rgba(14,14,15,.7);backdrop-filter:blur(8px);border-bottom:1px solid #222}
+    header{position:sticky;top:0;z-index:50;background:rgba(13,13,15,0.85);backdrop-filter:blur(10px);border-bottom:1px solid #222;}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
     .brand .name{font-family:"Playfair Display",serif;font-size:22px;letter-spacing:1.5px;color:var(--gold)}
-    .cta-whatsapp{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#111;padding:10px 14px;border-radius:999px;font-weight:600}
+    .cta-whatsapp{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(45deg,#25D366,#128C7E);
+      color:#fff;padding:10px 14px;border-radius:999px;font-weight:700;
+      transition: all .3s ease;
+    }
+    .cta-whatsapp:hover{
+      box-shadow:0 0 12px var(--gold),0 0 20px #25D366;
+      transform:scale(1.05);
+    }
 
     /* Hero */
-    .hero{position:relative;isolation:isolate}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.45)}
-    .hero-inner{padding:80px 0 90px}
-    .kicker{color:var(--muted);letter-spacing:3px;text-transform:uppercase;font-size:12px}
-    h1{font-family:"Playfair Display",serif;font-size:48px;margin:10px 0 10px;line-height:1.1;color:#fff}
-    .sub{color:#d9d9db;max-width:650px}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .badge{border:1px solid rgba(212,175,55,.5);color:var(--gold);padding:6px 10px;border-radius:999px;font-size:12px}
+    .hero{position:relative;isolation:isolate; overflow:hidden;}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      filter:brightness(.45);
+    }
+    .hero-inner{padding:100px 0 90px;text-align:center}
+    .kicker{color:var(--muted);letter-spacing:3px;text-transform:uppercase;font-size:12px;margin-bottom:12px;}
+    h1{font-family:"Playfair Display",serif;font-size:48px;margin-bottom:16px;line-height:1.1;color:#fff;}
+    .sub{color:#d9d9db;max-width:650px;margin:0 auto 24px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+    .badge{border:1px solid rgba(212,175,55,.5);color:var(--gold);padding:6px 12px;border-radius:999px;font-size:12px;}
 
-    /* Grid produits */
+    /* Section produits */
     .section{padding:48px 0}
-    .section h2{font-family:"Playfair Display",serif;margin:0 0 18px;color:#fff}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .section h2{font-family:"Playfair Display",serif;margin-bottom:28px;color:#fff;text-align:center;}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
     @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (max-width:620px){h1{font-size:36px}.grid{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg,#191a1d, #121214);border:1px solid #242428;border-radius:18px;overflow:hidden}
-    .card img{width:100%;height:300px;object-fit:cover}
-    .card-body{padding:14px}
-    .title{font-weight:600}
-    .price{color:var(--gold);font-weight:700}
-    .btn{width:100%;border:1px solid var(--gold);color:#000;background:var(--gold);padding:10px 12px;border-radius:12px;font-weight:700;cursor:pointer}
-    .btn:active{transform:translateY(1px)}
+    @media (max-width:620px){.grid{grid-template-columns:1fr}}
 
-    /* Form */
-    form{background:linear-gradient(180deg,#141416,#101012);border:1px solid #242428;border-radius:18px;padding:18px}
-    label{display:block;font-size:13px;color:#d7d7da;margin-bottom:6px}
-    input,textarea,select{width:100%;background:#0f0f10;color:#fff;border:1px solid #2a2a30;border-radius:12px;padding:12px 14px;margin-bottom:12px}
-    textarea{min-height:80px}
+    .card{
+      background:var(--card-dark);
+      border-radius:18px;overflow:hidden;
+      border:1px solid #242428;
+      transition: transform .3s ease, box-shadow .3s ease;
+      cursor:pointer;
+      opacity:0;
+      transform: translateY(20px);
+    }
+    .card img{width:100%;height:300px;object-fit:cover;transition: transform .3s ease;}
+    .card:hover img{transform: scale(1.05);}
+    .card:hover{transform: translateY(-6px); box-shadow:0 8px 20px var(--hover-glow);}
+    .card-body{padding:16px}
+    .title{font-weight:700;font-size:18px;margin-bottom:6px;}
+    .muted{color:var(--muted);font-size:13px;margin-bottom:12px;}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:12px 0;}
+    .price{color:var(--gold);font-weight:700;font-size:16px;margin-bottom:12px;}
+    .btn{width:100%;border:1px solid var(--gold);color:#000;background:var(--gold);padding:10px 12px;border-radius:12px;font-weight:700;cursor:pointer;transition:all .3s;}
+    .btn:hover{background:#fff;color:var(--gold);transform:scale(1.03);}
+
+    /* Form commande */
+    form{background:var(--card-dark);border:1px solid #242428;border-radius:18px;padding:24px;}
+    label{display:block;font-size:13px;color:#d7d7da;margin-bottom:6px;}
+    input,textarea,select{width:100%;background:#0f0f10;color:#fff;border:1px solid #2a2a30;border-radius:12px;padding:12px 14px;margin-bottom:12px;}
+    textarea{min-height:80px;}
 
     /* Footer */
-    footer{padding:26px 0;border-top:1px solid #222;color:#c7c7cb}
-    .credits{font-size:12px;color:#9c9ca1}
+    footer{padding:26px 0;border-top:1px solid #222;color:#c7c7cb;text-align:center;}
+    .credits{font-size:12px;color:#9c9ca1;margin-top:8px;}
 
-    /* Gold divider */
-    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.7),transparent);margin:28px 0}
+    /* Animations */
+    .fade-in{animation:fadeInUp .6s forwards;}
+    @keyframes fadeInUp{
+      0%{opacity:0; transform:translateY(20px);}
+      100%{opacity:1; transform:translateY(0);}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <div class="brand">
-        <!-- Remplacez src par votre fichier logo (ex: assets/logo.png) -->
         <img src="" alt="AZTIK FRAGRANCE Logo" onerror="this.style.display='none'"/>
         <span class="name">AZTIK FRAGRANCE</span>
       </div>
@@ -93,101 +125,21 @@
   <main class="container">
     <div class="section" id="produits">
       <h2>Nos parfums</h2>
-      <div class="grid">
-        <!-- Produit 1 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/HLDh1p6x/Eros-Eaude-Toilette50ml-Versace-6.webp"  alt="Versace Eros Eau de Toilette 50ml" />
+      <div class="grid" id="productGrid">
+        <!-- Les produits vont ici, exemple produit 1 -->
+        <article class="card fade-in">
+          <img src="https://i.postimg.cc/HLDh1p6x/Eros-Eaude-Toilette50ml-Versace-6.webp" alt="Versace Eros Eau de Toilette 50ml"/>
           <div class="card-body">
-            <div class="title">Versace Eros </div>
+            <div class="title">Versace Eros</div>
             <div class="muted">Ambre • Vanille • Musk</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
             <button class="btn" onclick="selectProduct('Versace Eros', '230')">Commander</button>
           </div>
         </article>
-        <!-- Produit 2 -->
-        <article class="card">
-          <img  src="https://i.postimg.cc/cCRCr0VX/Bleu-de-Chanel-Parfum.jpg" alt="Bleu de Chanel Parfum" />
-          <div class="card-body">
-            <div class="title">Bleu de Chanel </div>
-            <div class="muted">Boisé • Épicé • Chaud</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Blue de Chanel', '230')">Commander</button>
-          </div>
-        </article>
-        <!-- Produit 3 -->
-        <article class="card">
-          <img src=https://i.postimg.cc/dt9DFQR0/dsawasd-480x480.webp
-          <div class="card-body">
-            <div class="title">Sauvage Dior </div>
-            <div class="muted">Agrumes • Marin • Propre</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Sauvage Dior', '229')">Commander</button>
-          </div>
-        </article>
-       <!-- Produit 1 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/L52gZRjS/Captured-ecran2024-09-09192856.webp"
-     alt="screenshot"
-     style="max-width:100%;height:auto;">
-          <div class="card-body">
-            <div class="title">Stronger With You Intensely </div>
-            <div class="muted">Agrumes • Marin • Propre</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Stronger With You Intensely', '230')">Commander</button>
-          </div>
-        </article>
-       <!-- Produit 2 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png"
-     alt="Light blue "
-     style="max-width:100%;height:auto;">
-          <div class="card-body">
-            <div class="title">Light Blue Dolce&Gabbana </div>
-            <div class="muted">Agrumes • Marin • Propre</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '2')">Commander</button>
-          </div>
-        </article>
-     <!-- Produit 3 -->
-        <article class="card">
-          <img  src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="Jean Paul Gaultier – La Belle Le Parfum">
-          <div class="card-body">
-            <div class="title">La Belle </div>
-            <div class="muted">Boisé • Épicé • Chaud</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('La Belle', '230')">Commander</button>
-          </div>
-        </article>
-     <!-- Produit 1 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/1XRWykCC/70978c82-1ac8-4c76-8554-a04e055208e1-3484eb69fdbf01fd0f1ccbe520801343.webp"
-     alt="Valentino"
-     style="max-width:100%; height:auto;">
-          <div class="card-body">
-            <div class="title">Valentino </div>
-            <div class="muted">Ambre • Vanille • Musk</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Valentino', '230')">Commander</button>
-          </div>
-        </article>
-         <!-- Produit 2 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/BQQWkJms/Prada-Paradoxe-Intense-Still-Bottle-1-1x1-RGB-3614273961707-1fa7a6e1-31ff-4e96-9ff4-8a60781f22db-600x.webp" alt="Prada Paradoxe Intense">
-          <div class="card-body">
-            <div class="title">Prada Pradoxe </div>
-            <div class="muted">Agrumes • Marin • Propre</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Prada Pradoxe', '229')">Commander</button>
-          </div>
-        </article>
+        <!-- Add other products the same way with class="card fade-in" -->
+      </div>
+    </div>
 
     <div class="section" id="commande">
       <h2>Commander maintenant</h2>
@@ -234,21 +186,20 @@
           </div>
         </div>
         <button class="btn" style="margin-top:6px">Confirmer la commande (Paiement à la livraison)</button>
-        <div class="credits" style="margin-top:8px">En cliquant, votre commande nous sera envoyée sur WhatsApp. Nous vous contacterons pour confirmation.</div>
+        <div class="credits">En cliquant, votre commande nous sera envoyée sur WhatsApp. Nous vous contacterons pour confirmation.</div>
       </form>
     </div>
   </main>
 
   <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <div>© <span id="year"></span> AZTIK FRAGRANCE — Tous droits réservés.</div>
+    <div class="container">
+      © <span id="year"></span> AZTIK FRAGRANCE — Tous droits réservés.
       <div class="credits">Site démo (images placeholders). Remplacez-les par vos propres visuels.</div>
     </div>
   </footer>
 
   <script>
-    // 👉 Mettez ici votre numéro WhatsApp au format international sans + (ex: 2126XXXXXXXX)
-    const WHATSAPP_NUMBER = '212774070108'; // À REMPLACER
+    const WHATSAPP_NUMBER = '212774070108';
 
     function selectProduct(name, price){
       document.querySelector('#product').value = `${name} — ${price} DH`;
@@ -283,9 +234,18 @@
     }
 
     document.querySelector('#year').textContent = new Date().getFullYear();
+
+    // Animate cards on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {threshold:0.2});
+
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
-
-
-

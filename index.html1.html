@@ -217,16 +217,16 @@
       const size = document.querySelector('#size').value;
       const note = document.querySelector('#note').value.trim();
 
-      const message = `🛍️ Nouvelle commande AZTIK FRAGRANCE\n`+
-        `Nom: ${name}\n`+
-        `Téléphone: ${phone}\n`+
-        `Ville: ${city}\n`+
-        `Adresse: ${address}\n`+
-        `Produit: ${product}\n`+
-        `Taille: ${size}\n`+
-        `Quantité: ${qty}\n`+
-        (note?`Remarque: ${note}\n`:``)+
-        `Paiement: à la livraison`;
+      const message = 🛍️ Nouvelle commande AZTIK FRAGRANCE
+Nom: nom
+Téléphone: 06xxxxxxx
+Ville: Casablanca
+Adresse: Rue XXX
+Produits:
+Taille: 100ml
+Remarque: …
+Paiement: à la livraison
+
 
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
@@ -249,3 +249,4 @@
   </script>
 </body>
 </html>
+

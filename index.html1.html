@@ -56,9 +56,9 @@
     /* Section produits */
     .section{padding:48px 0}
     .section h2{font-family:"Playfair Display",serif;margin-bottom:28px;color:#fff;text-align:center;}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,10fr));gap:24px;}
-    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,10fr))}}
-    @media (max-width:620px){.grid{grid-template-columns:10fr}}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:620px){.grid{grid-template-columns:1fr}}
 
     .card{
       background:var(--card-dark);
@@ -251,7 +251,7 @@
     <div class="section" id="commande">
       <h2>Commander maintenant</h2>
       <form onsubmit="return submitOrder(event)">
-        <div class="grid" style="grid-template-columns:repeat(2,minmax(0,10fr));gap:12px">
+        <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
           <div>
             <label>Nom complet</label>
             <input required id="name" placeholder="Votre nom" />
@@ -340,6 +340,7 @@
   </script>
 </body>
 </html>
+
 
 
 

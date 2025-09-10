@@ -56,9 +56,9 @@
     /* Section produits */
     .section{padding:48px 0}
     .section h2{font-family:"Playfair Display",serif;margin-bottom:28px;color:#fff;text-align:center;}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
-    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (max-width:620px){.grid{grid-template-columns:1fr}}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,10fr));gap:24px;}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,10fr))}}
+    @media (max-width:620px){.grid{grid-template-columns:10fr}}
 
     .card{
       background:var(--card-dark);
@@ -251,7 +251,7 @@
     <div class="section" id="commande">
       <h2>Commander maintenant</h2>
       <form onsubmit="return submitOrder(event)">
-        <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <div class="grid" style="grid-template-columns:repeat(2,minmax(0,10fr));gap:12px">
           <div>
             <label>Nom complet</label>
             <input required id="name" placeholder="Votre nom" />
@@ -296,12 +296,13 @@
   <footer>
     <div class="container">
       © <span id="year"></span> AZTIK FRAGRANCE — Tous droits réservés.
-      <div class="credits">Site démo (images placeholders). Remplacez-les par vos propres visuels.</div>
+      <div class="credits"/div>
     </div>
   </footer>
 
-  <script>
-    const WHATSAPP_NUMBER = '212774070108';
+ <script>
+    // 👉 Mettez ici votre numéro WhatsApp au format international sans + (ex: 2126XXXXXXXX)
+    const WHATSAPP_NUMBER = '212774070108'; // À REMPLACER
 
     function selectProduct(name, price){
       document.querySelector('#product').value = `${name} — ${price} DH`;
@@ -336,18 +337,6 @@
     }
 
     document.querySelector('#year').textContent = new Date().getFullYear();
-
-    // Animate cards on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, {threshold:0.2});
-
-    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   </script>
 </body>
 </html>

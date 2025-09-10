@@ -22,7 +22,6 @@
     header{position:sticky;top:0;z-index:50;background:rgba(13,13,15,0.85);backdrop-filter:blur(10px);border-bottom:1px solid #222;}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
     .brand .name{font-family:"Playfair Display",serif;font-size:22px;letter-spacing:1.5px;color:var(--gold)}
     .cta-whatsapp{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,#25D366,#128C7E);color:#fff;padding:10px 14px;border-radius:999px;font-weight:700;transition: all .3s ease;}
     .cta-whatsapp:hover{box-shadow:0 0 12px var(--gold),0 0 20px #25D366;transform:scale(1.05);}
@@ -39,7 +38,16 @@
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
     @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card-dark);border-radius:18px;overflow:hidden;border:1px solid #242428;transition: transform .3s ease, box-shadow .3s ease;cursor:pointer;opacity:0;transform: translateY(20px;}
+    .card{
+      background:var(--card-dark);
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid #242428;
+      transition: transform .3s ease, box-shadow .3s ease;
+      cursor:pointer;
+      opacity:0;
+      transform: translateY(20px);
+    }
     .card img{width:100%;height:300px;object-fit:cover;transition: transform .3s ease;}
     .card:hover img{transform: scale(1.05);}
     .card:hover{transform: translateY(-6px); box-shadow:0 8px 20px var(--hover-glow);}
@@ -88,9 +96,8 @@
     <div class="section" id="produits">
       <h2>Nos parfums</h2>
       <div class="grid" id="productGrid">
-        <!-- Produit 1 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/HLDh1p6x/Eros-Eaude-Toilette50ml-Versace-6.webp"  alt="Versace Eros Eau de Toilette 50ml" />
+        <article class="card fade-in">
+          <img src="https://i.postimg.cc/HLDh1p6x/Eros-Eaude-Toilette50ml-Versace-6.webp" alt="Versace Eros" />
           <div class="card-body">
             <div class="title">Versace Eros</div>
             <div class="muted">Ambre • Vanille • Musk</div>
@@ -99,9 +106,8 @@
             <button class="btn" onclick="selectProduct('Versace Eros', '230')">Commander</button>
           </div>
         </article>
-        <!-- Produit 2 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/cCRCr0VX/Bleu-de-Chanel-Parfum.jpg" alt="Bleu de Chanel Parfum" />
+        <article class="card fade-in">
+          <img src="https://i.postimg.cc/cCRCr0VX/Bleu-de-Chanel-Parfum.jpg" alt="Bleu de Chanel" />
           <div class="card-body">
             <div class="title">Bleu de Chanel</div>
             <div class="muted">Boisé • Épicé • Chaud</div>
@@ -110,72 +116,52 @@
             <button class="btn" onclick="selectProduct('Bleu de Chanel', '230')">Commander</button>
           </div>
         </article>
-        <!-- Produit 3 -->
-        <article class="card">
+        <article class="card fade-in">
           <img src="https://i.postimg.cc/dt9DFQR0/dsawasd-480x480.webp" alt="Sauvage Dior" />
           <div class="card-body">
             <div class="title">Sauvage Dior</div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
-            <div class="price">230 DH</div>
+            <div class="price">229 DH</div>
             <button class="btn" onclick="selectProduct('Sauvage Dior', '229')">Commander</button>
           </div>
         </article>
-        <!-- Produit 4 -->
+        <!-- Produit 1 -->
         <article class="card">
-          <img src="https://i.postimg.cc/L52gZRjS/Captured-ecran2024-09-09192856.webp" alt="Stronger With You Intensely" />
+          <img src="https://i.postimg.cc/L52gZRjS/Captured-ecran2024-09-09192856.webp"
+     alt="screenshot"
+     style="max-width:100%;height:auto;">
           <div class="card-body">
-            <div class="title">Stronger With You Intensely</div>
+            <div class="title">Stronger With You Intensely </div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
             <button class="btn" onclick="selectProduct('Stronger With You Intensely', '230')">Commander</button>
           </div>
         </article>
-        <!-- Produit 5 -->
+       <!-- Produit 2 -->
         <article class="card">
-          <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png" alt="Light Blue Dolce&Gabbana" />
+          <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png"
+     alt="Light blue "
+     style="max-width:100%;height:auto;">
           <div class="card-body">
-            <div class="title">Light Blue Dolce&Gabbana</div>
+            <div class="title">Light Blue Dolce&Gabbana </div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '230')">Commander</button>
+            <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '2')">Commander</button>
           </div>
         </article>
-        <!-- Produit 6 -->
+     <!-- Produit 3 -->
         <article class="card">
-          <img src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="La Belle Jean Paul Gaultier">
+          <img  src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="Jean Paul Gaultier – La Belle Le Parfum">
           <div class="card-body">
-            <div class="title">La Belle</div>
+            <div class="title">La Belle </div>
             <div class="muted">Boisé • Épicé • Chaud</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
             <button class="btn" onclick="selectProduct('La Belle', '230')">Commander</button>
           </div>
-        </article>
-        <!-- Produit 7 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/1XRWykCC/70978c82-1ac8-4c76-8554-a04e055208e1-3484eb69fdbf01fd0f1ccbe520801343.webp" alt="Valentino">
-          <div class="card-body">
-            <div class="title">Valentino</div>
-            <div class="muted">Ambre • Vanille • Musk</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Valentino', '230')">Commander</button>
-          </div>
-        </article>
-        <!-- Produit 8 -->
-        <article class="card">
-          <img src="https://i.postimg.cc/BQQWkJms/Prada-Paradoxe-Intense-Still-Bottle-1-1x1-RGB-3614273961707-1fa7a6e1-31ff-4e96-9ff4-8a60781f22db-600x.webp" alt="Prada Paradoxe Intense">
-          <div class="card-body">
-            <div class="title">Prada Paradoxe</div>
-            <div class="muted">Agrumes • Marin • Propre</div>
-            <div class="divider"></div>
-            <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Prada Paradoxe', '229')">Commander</button>
-          </div>
-        </article>
       </div>
     </div>
 
@@ -224,8 +210,8 @@
             <textarea id="note" placeholder="Ex: Livraison soir, produit cadeau..."></textarea>
           </div>
         </div>
-        <button class="btn" style="margin-top:6px">Confirmer la commande (Paiement à la livraison)</button>
-        <div class="credits">En cliquant, votre commande nous sera envoyée sur WhatsApp. Nous vous contacterons pour confirmation.</div>
+        <button class="btn" style="margin-top:6px">Envoyer la commande sur WhatsApp</button>
+        <div class="credits">En cliquant, votre commande sera envoyée sur WhatsApp. Nous vous contacterons pour confirmation.</div>
       </form>
     </div>
   </main>
@@ -253,22 +239,20 @@
       const product = document.querySelector('#product').value.trim() || 'Non précisé';
       const qty = document.querySelector('#qty').value;
       const size = document.querySelector('#size').value;
-      const note = document.querySelector('#note').value.trim();
+      const note = document.querySelector('#note').value.trim() || 'Aucune remarque';
 
-      const message = `🛍️ Nouvelle commande AZTIK FRAGRANCE\n`+
-        `Nom: ${name}\n`+
-        `Téléphone: ${phone}\n`+
-        `Ville: ${city}\n`+
-        `Adresse: ${address}\n`+
-        `Produit: ${product}\n`+
-        `Taille: ${size}\n`+
-        `Quantité: ${qty}\n`+
-        (note?`Remarque: ${note}\n`:``)+
-        `Paiement: à la livraison`;
+      const message = `🛍️ *Nouvelle commande AZTIK FRAGRANCE* 🛍️%0A
+*Nom:* ${name}%0A
+*Téléphone:* ${phone}%0A
+*Ville:* ${city}%0A
+*Adresse:* ${address}%0A
+*Produit:* ${product}%0A
+*Quantité:* ${qty}%0A
+*Taille:* ${size}%0A
+*Remarque:* ${note}`;
 
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-      return false;
+      const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      window.open(whatsappURL, '_blank');
     }
 
     document.querySelector('#year').textContent = new Date().getFullYear();

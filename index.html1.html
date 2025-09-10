@@ -24,12 +24,7 @@
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
     .brand .name{font-family:"Playfair Display",serif;font-size:22px;letter-spacing:1.5px;color:var(--gold)}
-    .cta-whatsapp{
-      display:inline-flex;align-items:center;gap:8px;
-      background:linear-gradient(45deg,#25D366,#128C7E);
-      color:#fff;padding:10px 14px;border-radius:999px;font-weight:700;
-      transition: all .3s ease;
-    }
+    .cta-whatsapp{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,#25D366,#128C7E);color:#fff;padding:10px 14px;border-radius:999px;font-weight:700;transition: all .3s ease;}
     .cta-whatsapp:hover{box-shadow:0 0 12px var(--gold),0 0 20px #25D366;transform:scale(1.05);}
     .hero{position:relative;isolation:isolate; overflow:hidden;}
     .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.45);}
@@ -44,7 +39,7 @@
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
     @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card-dark);border-radius:18px;overflow:hidden;border:1px solid #242428;transition: transform .3s ease, box-shadow .3s ease;cursor:pointer;opacity:0;transform: translateY(20px);}
+    .card{background:var(--card-dark);border-radius:18px;overflow:hidden;border:1px solid #242428;transition: transform .3s ease, box-shadow .3s ease;cursor:pointer;opacity:0;transform: translateY(20px;}
     .card img{width:100%;height:300px;object-fit:cover;transition: transform .3s ease;}
     .card:hover img{transform: scale(1.05);}
     .card:hover{transform: translateY(-6px); box-shadow:0 8px 20px var(--hover-glow);}
@@ -89,6 +84,102 @@
   </section>
 
   <main class="container">
+    <!-- Catalogue Produits -->
+    <div class="section" id="produits">
+      <h2>Nos parfums</h2>
+      <div class="grid" id="productGrid">
+        <!-- Produit 1 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/HLDh1p6x/Eros-Eaude-Toilette50ml-Versace-6.webp"  alt="Versace Eros Eau de Toilette 50ml" />
+          <div class="card-body">
+            <div class="title">Versace Eros</div>
+            <div class="muted">Ambre • Vanille • Musk</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Versace Eros', '230')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 2 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/cCRCr0VX/Bleu-de-Chanel-Parfum.jpg" alt="Bleu de Chanel Parfum" />
+          <div class="card-body">
+            <div class="title">Bleu de Chanel</div>
+            <div class="muted">Boisé • Épicé • Chaud</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Bleu de Chanel', '230')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 3 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/dt9DFQR0/dsawasd-480x480.webp" alt="Sauvage Dior" />
+          <div class="card-body">
+            <div class="title">Sauvage Dior</div>
+            <div class="muted">Agrumes • Marin • Propre</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Sauvage Dior', '229')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 4 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/L52gZRjS/Captured-ecran2024-09-09192856.webp" alt="Stronger With You Intensely" />
+          <div class="card-body">
+            <div class="title">Stronger With You Intensely</div>
+            <div class="muted">Agrumes • Marin • Propre</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Stronger With You Intensely', '230')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 5 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png" alt="Light Blue Dolce&Gabbana" />
+          <div class="card-body">
+            <div class="title">Light Blue Dolce&Gabbana</div>
+            <div class="muted">Agrumes • Marin • Propre</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '230')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 6 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="La Belle Jean Paul Gaultier">
+          <div class="card-body">
+            <div class="title">La Belle</div>
+            <div class="muted">Boisé • Épicé • Chaud</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('La Belle', '230')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 7 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/1XRWykCC/70978c82-1ac8-4c76-8554-a04e055208e1-3484eb69fdbf01fd0f1ccbe520801343.webp" alt="Valentino">
+          <div class="card-body">
+            <div class="title">Valentino</div>
+            <div class="muted">Ambre • Vanille • Musk</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Valentino', '230')">Commander</button>
+          </div>
+        </article>
+        <!-- Produit 8 -->
+        <article class="card">
+          <img src="https://i.postimg.cc/BQQWkJms/Prada-Paradoxe-Intense-Still-Bottle-1-1x1-RGB-3614273961707-1fa7a6e1-31ff-4e96-9ff4-8a60781f22db-600x.webp" alt="Prada Paradoxe Intense">
+          <div class="card-body">
+            <div class="title">Prada Paradoxe</div>
+            <div class="muted">Agrumes • Marin • Propre</div>
+            <div class="divider"></div>
+            <div class="price">230 DH</div>
+            <button class="btn" onclick="selectProduct('Prada Paradoxe', '229')">Commander</button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Formulaire Commande -->
     <div class="section" id="commande">
       <h2>Commander maintenant</h2>
       <form onsubmit="return submitOrder(event)">
@@ -148,6 +239,11 @@
   <script>
     const WHATSAPP_NUMBER = '212774070108';
 
+    function selectProduct(name, price){
+      document.querySelector('#product').value = `${name} — ${price} DH`;
+      document.querySelector('#commande').scrollIntoView({behavior:'smooth'});
+    }
+
     function submitOrder(e){
       e.preventDefault();
       const name = document.querySelector('#name').value.trim();
@@ -176,6 +272,17 @@
     }
 
     document.querySelector('#year').textContent = new Date().getFullYear();
+
+    // Animate cards
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {threshold:0.2});
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   </script>
 </body>
 </html>

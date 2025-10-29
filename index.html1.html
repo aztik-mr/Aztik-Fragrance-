@@ -92,10 +92,10 @@
   </section>
 
   <main class="container">
-    <!-- Catalogue Produits -->
     <div class="section" id="produits">
       <h2>Nos parfums</h2>
       <div class="grid" id="productGrid">
+
         <article class="card fade-in">
           <img src="https://i.postimg.cc/HLDh1p6x/Eros-Eaude-Toilette50ml-Versace-6.webp" alt="Versace Eros" />
           <div class="card-body">
@@ -106,6 +106,7 @@
             <button class="btn" onclick="selectProduct('Versace Eros', '230')">Commander</button>
           </div>
         </article>
+
         <article class="card fade-in">
           <img src="https://i.postimg.cc/cCRCr0VX/Bleu-de-Chanel-Parfum.jpg" alt="Bleu de Chanel" />
           <div class="card-body">
@@ -116,6 +117,7 @@
             <button class="btn" onclick="selectProduct('Bleu de Chanel', '230')">Commander</button>
           </div>
         </article>
+
         <article class="card fade-in">
           <img src="https://i.postimg.cc/dt9DFQR0/dsawasd-480x480.webp" alt="Sauvage Dior" />
           <div class="card-body">
@@ -126,10 +128,10 @@
             <button class="btn" onclick="selectProduct('Sauvage Dior', '229')">Commander</button>
           </div>
         </article>
-          <article class="card fade-in">
-          <img src="https://i.postimg.cc/Cxw1PFj5/Captured-ecran2024-12-04205254.webp"
-     alt="Scandal"
-            <div class="card-body">
+
+        <article class="card fade-in">
+          <img src="https://i.postimg.cc/Cxw1PFj5/Captured-ecran2024-12-04205254.webp" alt="Scandal" />
+          <div class="card-body">
             <div class="title">Scandal</div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
@@ -137,53 +139,54 @@
             <button class="btn" onclick="selectProduct('Scandal', '229')">Commander</button>
           </div>
         </article>
-          <article class="card fade-in">
-          <img src=https://i.postimg.cc/3J8N98jR/Captured-ecran2024-09-09191315.webp
-     alt="Le Malle Elixir"
-             <div class="card-body">
+
+        <article class="card fade-in">
+          <img src="https://i.postimg.cc/3J8N98jR/Captured-ecran2024-09-09191315.webp" alt="Le Male Elixir Jean Paul Gaultier" />
+          <div class="card-body">
             <div class="title">Le Male Elixir Jean Paul Gaultier</div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
             <div class="price">229 DH</div>
-            <button class="btn" onclick="selectProduct('Scandal', '229')">Commander</button>
+            <button class="btn" onclick="selectProduct('Le Male Elixir Jean Paul Gaultier', '229')">Commander</button>
           </div>
+        </article>
+
         <article class="card fade-in">
-          <img src="https://i.postimg.cc/L52gZRjS/Captured-ecran2024-09-09192856.webp"
-     alt="screenshot"
-     style="max-width:100%;height:auto;">
+          <img src="https://i.postimg.cc/L52gZRjS/Captured-ecran2024-09-09192856.webp" alt="Stronger With You Intensely" style="max-width:100%;height:auto;" />
           <div class="card-body">
-            <div class="title">Stronger With You Intensely </div>
+            <div class="title">Stronger With You Intensely</div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
             <button class="btn" onclick="selectProduct('Stronger With You Intensely', '230')">Commander</button>
           </div>
         </article>
+
         <article class="card fade-in">
-          <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png"
-     alt="Light blue "
-     style="max-width:100%;height:auto;">
+          <img src="https://i.postimg.cc/MpYvQgdb/218090-800-800.png" alt="Light Blue Dolce&Gabbana" style="max-width:100%;height:auto;" />
           <div class="card-body">
-            <div class="title">Light Blue Dolce&Gabbana </div>
+            <div class="title">Light Blue Dolce&Gabbana</div>
             <div class="muted">Agrumes • Marin • Propre</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
-            <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '2')">Commander</button>
+            <button class="btn" onclick="selectProduct('Light Blue Dolce&Gabbana', '230')">Commander</button>
           </div>
         </article>
+
         <article class="card fade-in">
-          <img  src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="Jean Paul Gaultier – La Belle Le Parfum">
+          <img src="https://i.postimg.cc/pLWd0NFn/JPG-LA-BELLE-LE-PARFUM2021-SJP-9548-JPG-ETAILING-LBLP-1080x.webp" alt="La Belle Le Parfum" />
           <div class="card-body">
-            <div class="title">La Belle </div>
+            <div class="title">La Belle</div>
             <div class="muted">Boisé • Épicé • Chaud</div>
             <div class="divider"></div>
             <div class="price">230 DH</div>
             <button class="btn" onclick="selectProduct('La Belle', '230')">Commander</button>
           </div>
+        </article>
+
       </div>
     </div>
 
-    <!-- Formulaire Commande -->
     <div class="section" id="commande">
       <h2>Commander maintenant</h2>
       <form onsubmit="return submitOrder(event)">
@@ -202,97 +205,3 @@
           </div>
           <div>
             <label>Adresse complète</label>
-            <input required id="address" placeholder="Rue, N°, Quartier" />
-          </div>
-          <div>
-            <label>Produit</label>
-            <input id="product" readonly placeholder="Sélectionnez depuis le catalogue" />
-          </div>
-          <div>
-            <label>Quantité</label>
-            <select id="qty">
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div>
-            <label>Taille</label>
-            <select id="size">
-              <option value="50ml">50ml</option>
-              <option value="100ml" selected>100ml</option>
-            </select>
-          </div>
-          <div style="grid-column: span 2;">
-            <label>Remarque</label>
-            <textarea id="note" placeholder="Ex: Livraison soir, produit cadeau..."></textarea>
-          </div>
-        </div>
-        <button class="btn" style="margin-top:6px">Envoyer la commande sur WhatsApp</button>
-        <div class="credits">En cliquant, votre commande sera envoyée sur WhatsApp. Nous vous contacterons pour confirmation.</div>
-      </form>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> AZTIK FRAGRANCE — Tous droits réservés.
-    </div>
-  </footer>
-
-  <script>
-    const WHATSAPP_NUMBER = '212774070108';
-
-    function selectProduct(name, price){
-      document.querySelector('#product').value = `${name} — ${price} DH`;
-      document.querySelector('#commande').scrollIntoView({behavior:'smooth'});
-    }
-
-    function submitOrder(e){
-      e.preventDefault();
-      const name = document.querySelector('#name').value.trim();
-      const phone = document.querySelector('#phone').value.trim();
-      const city = document.querySelector('#city').value.trim();
-      const address = document.querySelector('#address').value.trim();
-      const product = document.querySelector('#product').value.trim() || 'Non précisé';
-      const qty = document.querySelector('#qty').value;
-      const size = document.querySelector('#size').value;
-      const note = document.querySelector('#note').value.trim() || 'Aucune remarque';
-
-      const message = `🛍 🛍️*Nouvelle commande AZTIK FRAGRANCE*🛍️ 🛍%0A
-*Nom:* ${name}%0A
-*Téléphone:* ${phone}%0A
-*Ville:* ${city}%0A
-*Adresse:* ${address}%0A
-*Produit:* ${product}%0A
-*Quantité:* ${qty}%0A
-*Taille:* ${size}%0A
-*Remarque:* ${note}`;
-
-      const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-      window.open(whatsappURL, '_blank');
-    }
-
-    document.querySelector('#year').textContent = new Date().getFullYear();
-
-    // Animate cards
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, {threshold:0.2});
-    document.querySelectorAll('.card').forEach(card => observer.observe(card));
-  </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
